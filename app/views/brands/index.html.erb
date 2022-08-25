@@ -1,13 +1,11 @@
 <h1>Brands</h1>
 
-
-
-
 <ul>
   <% @brands.each do |brand| %>
     <li>
       <a href="/brands/<%= brand.id %>">
         <%= brand.name %>
+      
       </a>
     </li>
   <% end %>

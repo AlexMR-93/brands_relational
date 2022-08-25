@@ -43,6 +43,9 @@ group(:development, :test) do
   gem("rspec-rails")
   gem("capybara")
   gem("launchy")
+  gem "simplecov"
+  gem 'shoulda-matchers'
+  gem 'orderly'
 end
 
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
