@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get("/brands/:id",   to: "brands#show")
   get("/cars",   to: "cars#index")
   get("/cars/:id",   to: "cars#show")
+  get("/brands/:id/cars",   to: "brands_cars#index")
 end
