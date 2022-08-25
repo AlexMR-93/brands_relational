@@ -9,16 +9,30 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-  # These are extensions that must be enabled in order to support this database
-ActiveRecord::Schema.define(version: 2022_08_24_064804) do
-  enable_extension("plpgsql")
 
-  create_table("brands",   force: :cascade) do |t|
-    t.string("name")
-    t.string("country_of_origin")
-    t.integer("num_of_models")
-    t.boolean("domestic?")
-    t.datetime("created_at",     null: false)
-    t.datetime("updated_at",     null: false)
+ActiveRecord::Schema.define(version: 2022_08_24_210947) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "brands", force: :cascade do |t|
+    t.string "name"
+    t.string "country_of_origin"
+    t.integer "num_of_models"
+    t.boolean "domestic"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
+  create_table "cars", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
+    t.boolean "maunual_transmission"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "brand_id"
+    t.index ["brand_id"], name: "index_cars_on_brand_id"
+  end
+
+  add_foreign_key "cars", "brands"
 end
