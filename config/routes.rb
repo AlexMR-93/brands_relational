@@ -2,6 +2,7 @@
 Rails.application.routes.draw do
   get("/",   to: "brands#index")
   get("/brands",   to: "brands#index")
-  get"/brands/:id", to: "brands#show"
-  get "/cars", to: "cars#index"
+  get("/brands/:id",   to: "brands#show")
+  get("/cars",   to: "cars#index")
+  get("/cars/:id",   to: "cars#show")
 end

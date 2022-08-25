@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-  #User Story 1, Parent Index
-#For each parent table
+#User Story 3, Child Index
+
 #As a visitor
-#When I visit '/parents'
-#Then I see the name of each parent record in the system
+#When I visit '/child_table_name'
+#Then I see each Child in the system including the Child's attributes:
 RSpec.describe("cars index", type: :feature) do
   it("name of each car Record") do
     brand1 = Brand.create!(    name: "Ford",     country_of_origin: "USA",     num_of_models: 10,     domestic: true)
