@@ -14,20 +14,10 @@ RSpec.describe("cars show", type: :feature) do
     @prius = @brand3.cars.create!(    name: "Prius",     price: 11000,     maunual_transmission: true)
   end
 
-  #User Story 7, Parent Child Count
-  #As a visitor
-  #When I visit a parent's show page
-#I see a count of the number of children associated with this parent
   it("name of each car Record") do
     visit("/cars/#{@focus.id}")
     expect(page).to(have_content(@focus.name))
     expect(page).to(have_content(@focus.price))
     expect(page).to_not(have_content(@cobolt.name))
-  end
-
-  it("can see a count of number of children associated with this parent") do
-    require "pry"
-
-    binding.pry
   end
 end
