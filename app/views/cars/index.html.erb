@@ -2,10 +2,6 @@
 
 <ul>
   <% @cars.each do |car| %>
-    <li>
-      <a href="/cars/<%= car.id %>">
-        <%=car.name %>
-      </a>
-    </li>
+      <li><%= link_to car.name,"/cars/#{car.id}"%></li>
   <% end %>
 </ul>

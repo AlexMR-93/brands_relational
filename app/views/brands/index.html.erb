@@ -2,11 +2,9 @@
 
 <ul>
   <% @brands.each do |brand| %>
-    <li>
-      <a href="/brands/<%= brand.id %>">
-        <%= brand.name %>
-      <%= brand.num_of_models %>
-      </a>
-    </li>
+
+      <p>Brand Name:<%= link_to brand.name,"/brands/#{brand.id}"%></p>
+
+
   <% end %>
 </ul>
